@@ -275,7 +275,7 @@
            <div class="flex items-center space-x-2 md:space-x-4">
     <!-- Foto User -->
     <div id="userPhotoContainer" class="flex items-center space-x-2">
-        <div class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center overflow-hidden border-2 border-white">
+        <div class="w-8 h-8 md:w-10 md:h-10 bg-gray-300 rounded-full flex items-center justify-center overflow-hidden border-2 border-white">
             <img id="userPhoto" src="" alt="User Photo" class="w-full h-full object-cover hidden">
             <span id="userInitial" class="text-gray-600 font-semibold text-sm md:text-base"></span>
         </div>
@@ -3344,7 +3344,6 @@ async generateQRISDinamis() {
         `;
     }
 },
-
             showTransferBankModal() {
                 if (!this.currentOrderSummary) {
                     this.currentOrderSummary = POSModule.getOrderSummary();
@@ -3971,7 +3970,6 @@ try {
             closeDiscountModal();
             showNotification('Discount berhasil diterapkan');
         }
-
 // ⭐⭐ EVENT LISTENERS - TAMBAHKAN DI SINI ⭐⭐
 // ⭐ CLEANUP PADA PAGE UNLOAD
 window.addEventListener('beforeunload', () => {
@@ -6082,13 +6080,6 @@ async function loadUserPhoto() {
         container.style.width = '5rem';    // 64px
         container.style.height = '5rem';   // 64px
     }
-    
-    // Update font size initial
-    const userInitial = document.getElementById('userInitial');
-    if (userInitial) {
-        userInitial.style.fontSize = '2.0rem'; // text-lg
-    }
-    
 // Function untuk lookup photo_url dari tabel karyawan
 async function lookupPhotoFromKaryawan(namaKaryawan) {
     try {
