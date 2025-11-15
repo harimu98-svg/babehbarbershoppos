@@ -282,8 +282,8 @@
     </div>
     
     <div class="text-right mobile-hidden">
-        <div id="currentUser" class="text-xs md:text-sm font-semibold"></div>
-        <div id="userRole" class="text-xs opacity-80"></div>
+        <div id="currentUser" class="text-xm md:text-sm font-semibold"></div>
+        <div id="userRole" class="text-xm opacity-80"></div>
     </div>
                 <button onclick="refreshApp()" class="bg-blue-600 hover:bg-blue-700 px-2 py-1 md:px-4 md:py-2 rounded-lg transition duration-200 flex items-center space-x-1 md:space-x-2 mobile-text-xs">
                     <span>↻</span>
@@ -6079,14 +6079,14 @@ async function loadUserPhoto() {
 // Update size container
     const container = document.querySelector('#userPhotoContainer > div');
     if (container) {
-        container.style.width = '4rem';    // 64px
-        container.style.height = '4rem';   // 64px
+        container.style.width = '8rem';    // 64px
+        container.style.height = '8rem';   // 64px
     }
     
     // Update font size initial
     const userInitial = document.getElementById('userInitial');
     if (userInitial) {
-        userInitial.style.fontSize = '1.25rem'; // text-lg
+        userInitial.style.fontSize = '2.0rem'; // text-lg
     }
     
 // Function untuk lookup photo_url dari tabel karyawan
