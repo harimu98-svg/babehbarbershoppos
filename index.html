@@ -6076,7 +6076,19 @@ async function loadUserPhoto() {
         document.getElementById('userRole').textContent = 'Check console';
     }
 }
-
+// Update size container
+    const container = document.querySelector('#userPhotoContainer > div');
+    if (container) {
+        container.style.width = '4rem';    // 64px
+        container.style.height = '4rem';   // 64px
+    }
+    
+    // Update font size initial
+    const userInitial = document.getElementById('userInitial');
+    if (userInitial) {
+        userInitial.style.fontSize = '1.25rem'; // text-lg
+    }
+    
 // Function untuk lookup photo_url dari tabel karyawan
 async function lookupPhotoFromKaryawan(namaKaryawan) {
     try {
