@@ -5183,15 +5183,7 @@ const PrinterModule = {
         this.checkStatus();
     },
 
-    async checkStatus() {
-        if (currentPrinterType === 'bridge') {
-            await this.checkBridgeStatus();
-        } else if (currentPrinterType === 'webserial') {
-            await this.checkWebSerialStatus();
-        } else if (currentPrinterType === 'btservice') {
-            await this.checkBtServiceStatus();
-        }
-    },
+    
 
     async checkBridgeStatus() {
         try {
