@@ -6693,43 +6693,7 @@ class BabehBarbershopPOS {
                 }
             }
 
-          async autoConnectPrinter() {
-    try {
-        const savedPrinterType = localStorage.getItem('printerType') || 'bridge';
-        const wasWebSerialConnected = localStorage.getItem('webSerial_connected') === 'true';
         
-        console.log('🔌 Printer auto-connect:', { 
-            type: savedPrinterType, 
-            wasConnected: wasWebSerialConnected 
-        });
-        
-        if (savedPrinterType === 'webserial' && wasWebSerialConnected) {
-            console.log('🔄 Attempting Web Serial auto-reconnect...');
-            
-            // Set UI ke Web Serial mode
-          PrinterModule.selectPrinterType('webserial');
-            
-            // Set baud rate dari saved value
-            const savedBaudRate = localStorage.getItem('webSerial_baudRate') || '9600';
-            if (document.getElementById('baudRate')) {
-                document.getElementById('baudRate').value = savedBaudRate;
-            }
-            
-            // Coba reconnect - tapi HANYA jika user sudah pernah pilih port
-            // Web Serial tidak bisa auto-connect tanpa user permission
-            console.log('ℹ️ Web Serial requires manual reconnection after page reload');
-            await PrinterModule.checkWebSerialStatus();
-            
-        } else if (savedPrinterType === 'bridge') {
-            console.log('🔗 Checking bridge printer status...');
-            PrinterModule.selectPrinterType('bridge');
-            await PrinterModule.checkStatus();
-        }
-        
-    } catch (error) {
-        console.log('❌ Printer auto-connect failed:', error.message);
-    }
-}
             // Refresh function yang komprehensif - DIPERBAIKI
             async refresh() {
     showLoading(true);
